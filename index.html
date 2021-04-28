@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Kyle's Leaving Tool</title>
+    <title>Kim's Retirement Tool</title>
     <style>
         html {
             height: 100%;
@@ -68,7 +68,7 @@
             left: 0;
         }
 
-        #early_departure {
+        #retirement_button {
             margin-left: auto;
             margin-right: auto;
             width: 10em;
@@ -87,19 +87,19 @@
 
     <noscript>
         <div id="javascript_disabled">
-            <span style="color: red">NOPE!</span> <span style="color: coral">There is NO leaving GCI!</span> <span style="color: purple">Javascript is unfortunately required</span></div>
+            <span style="color: red">Nice try!</span> <span style="color: blue">There is NO leaving GCI!!</span> <span style="color: purple">Javascript is unfortunately required!</span></div>
     </noscript>
 
-    <h1 style="text-align: center; position: relative; background-color: white; margin-top: 0; padding-top: 10px; border-bottom: 1px solid black;">Time until you CAN leave GCI: <span id="time_left"></span></h1>
+    <h1 style="text-align: center; position: relative; background-color: white; margin-top: 0; padding-top: 10px; border-bottom: 1px solid black;">Time Until Retirement Enabled: <span id="time_left"></span></h1>
     <div id="standard_retirement" style="width: 100%">
-        <button id="standard_retirement" disabled>Retire</button>
+        <button id="retirement_button" disabled>Retire</button>
     </div>
 
-    <button tabindex="-1" id="early_departure">Depart GCI Early!</button>
+    <button tabindex="-1" id="early_departure">Leave GCI Early!</button>
 
     <script src="https://moment.github.io/luxon/global/luxon.min.js" type="text/javascript"></script>
 <script>
-    let retirement_date = luxon.DateTime.local(2052, 6, 1, 23, 59, 59);
+    let retirement_date = luxon.DateTime.local(2049, 12, 31, 23, 59, 59);
     function setTimeRemaining() {
         let now = luxon.DateTime.now()
         let timeleft = luxon.Interval.fromDateTimes(now, retirement_date).toDuration().toFormat("d 'days', h 'hours', m 'minutes', 'and' s 'seconds'.");
@@ -178,10 +178,10 @@
     }
 
     function retire_click(event) {
-        alert("Congratulations Kyle! You are now allowed to retire! You will be missed and possibly haunted by former GCI employee ghosts");
+        alert("Congratulations Kyle! You are now allowed to retire!  You will be missed and possibly haunted by former GCI employees that may now be ghosts");
     }
 
-    function early_departure(event) {
+    function retire_early_click(event) {
         console.log("Clicking and clacking.");
         let now = luxon.DateTime.now();
 
@@ -189,14 +189,14 @@
             document.querySelector("#retirement_button").click();
         } else {
             let xml_compilation_time = Math.floor(Math.pow(1 / Math.random(), 16)).toLocaleString();
-            alert("Please submit your departure notice including 4 years notice.  Enter 128 digit unique Cherwell ticket here to continue: 'Undefined Error Occurred. Creating XML dump. Estimated Time Remaining - " + xml_compilation_time + " minutes.'");
+            alert("Please submit your departure notice with 4 years notice.  Enter a 128 digit unique Cherwell ticket her to continue: 'Undefined Error Occurred. Creating hidden DMP file, which would require a special tool to read...if you could find it.  hahahahaha  . Estimated Time Remaining - " + xml_compilation_time + " minutes.'");
         }
     }
 
     // Initialize retirement location
     let body = document.getElementById("body");
     let retirement_button = document.getElementById("retirement_button");
-    let early_departure_button = document.getElementById("early_departure");
+    let retire_early_button = document.getElementById("early_departure");
 
     recenter();
 
@@ -206,7 +206,7 @@
     body.onresize = recenter;
 
     retirement_button.onclick = retire_click;
-    early_departure_button.onclick = early_departure_click;
+    retire_early_button.onclick = retire_early_click;
 
     setTimeRemaining();
     window.timeRemainingInterval = setInterval(setTimeRemaining, 1000);
