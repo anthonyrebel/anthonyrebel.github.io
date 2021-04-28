@@ -87,10 +87,10 @@
 
     <noscript>
         <div id="javascript_disabled">
-            <span style="color: red">Nice try!</span> <span style="color: coral">No retirement for you!</span> <span style="color: purple">Javascript required!</span></div>
+            <span style="color: red">NOPE!</span> <span style="color: coral">There is NO leaving GCI!</span> <span style="color: purple">Javascript is unfortunately required</span></div>
     </noscript>
 
-    <h1 style="text-align: center; position: relative; background-color: white; margin-top: 0; padding-top: 10px; border-bottom: 1px solid black;">Time Until Retirement Enabled: <span id="time_left"></span></h1>
+    <h1 style="text-align: center; position: relative; background-color: white; margin-top: 0; padding-top: 10px; border-bottom: 1px solid black;">Time until you CAN leave GCI: <span id="time_left"></span></h1>
     <div id="standard_retirement" style="width: 100%">
         <button id="standard_retirement" disabled>Retire</button>
     </div>
@@ -120,7 +120,7 @@
 
     function recenter() {
         let body = document.getElementById("body");
-        let early_departure_button = document.getElementById("early_retirement");
+        let early_departure_button = document.getElementById("early_departure");
 
         let width = body.offsetWidth;
         let height = body.offsetHeight;
@@ -178,7 +178,7 @@
     }
 
     function retire_click(event) {
-        alert("Congratulations! Enjoy your retirement! We'll miss you!");
+        alert("Congratulations Kyle! You are now allowed to retire! You will be missed and possibly haunted by former GCI employee ghosts");
     }
 
     function early_departure(event) {
@@ -189,14 +189,14 @@
             document.querySelector("#retirement_button").click();
         } else {
             let xml_compilation_time = Math.floor(Math.pow(1 / Math.random(), 16)).toLocaleString();
-            alert("Please submit a ticket with your customized early retirement 16 digit activation code: 'Undefined Error Occurred. Creating XML dump. Estimated Time Remaining - " + xml_compilation_time + " minutes.'");
+            alert("Please submit your departure notice including 4 years notice.  Enter 128 digit unique Cherwell ticket here to continue: 'Undefined Error Occurred. Creating XML dump. Estimated Time Remaining - " + xml_compilation_time + " minutes.'");
         }
     }
 
     // Initialize retirement location
     let body = document.getElementById("body");
     let retirement_button = document.getElementById("retirement_button");
-    let retire_early_button = document.getElementById("early_retirement");
+    let early_departure_button = document.getElementById("early_departure");
 
     recenter();
 
@@ -206,7 +206,7 @@
     body.onresize = recenter;
 
     retirement_button.onclick = retire_click;
-    retire_early_button.onclick = retire_early_click;
+    early_departure_button.onclick = early_departure_click;
 
     setTimeRemaining();
     window.timeRemainingInterval = setInterval(setTimeRemaining, 1000);
